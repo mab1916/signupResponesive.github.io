@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUP</title>
+    <link rel="stylesheet" href="./ResponesiveSignupCSS.css">
+    <link rel="stylesheet" href="./fontawesome-free-5.15.4-web/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+</head>
+
+<body>
+    <div class="form">
+        <div class="signUpForm">
+            <form class="form1">
+                <div class="formTop">
+                    <div class="personalDetails">
+                        <div class="num1">01
+                        </div>
+                        <div>Personal Details</div>
+                    </div>
+                    <select name="Language" id="Language" class="language">
+                        <option value="0">English</option>
+                        <option value="1">Urdu</option>
+                        <option value="2">Hindi</option>
+                    </select>
+                </div>
+                <h1>Get started absolutely free</h1>
+                <p style="color: gray;">Free forever, No created card needed.</p>
+                <br><br>
+                <div class="input-field">
+                    <input type="text" id="name" class="inputSignup" required />
+                    <label for="name">Full Name *</label>
+                </div>
+                <br>
+                <div class="input-field">
+                    <input type="email" id="email" class="inputSignup" required />
+                    <label for="email">Email Address *</label>
+                </div>
+                <br>
+                <div class="input-field">
+                    <input type="password" id="password" class="inputSignup" required />
+                    <label for="password">Password *</label>
+                </div>
+                <br>
+                <div class="input-field">
+                    <div class="alert alert-info" style="display: none;"></div>
+                    <input id="phone" type="tel" name="phone" class="inputSignupTel" required>
+                </div>
+                <br>
+                <div class="input-field">
+                    <input type="date" data-date-format="DD MMMM YYYY" class="inputSignupDate" value="2021-01-01"
+                        required>
+                </div>
+                <br>
+                <div class="input-field">
+                    <input type="checkbox">
+                    <span style="font-size: 15px; margin-left: 10px;">By Clicking have you confirm that you agree with our terms & conditions</span>
+                </div>
+                <div class="input-field">
+                    <input type="submit" class="submitBtn" value="CREATE MY ACCOUNT">
+                    <span>or</span>
+                    <img class="glogo" src="./assets/images/googleLogo.png">
+                    <img class="flogo" src="./assets/images/Facebook-logo.png">
+                </div>
+            </form>
+        </div>
+        <div class="middle">
+            <form>
+                <input class="middleRadio1" type="radio" name="r" checked><br><br>
+                <input class="middleRadio2" type="radio" name="r"><br><br>
+                <input class="middleRadio3" type="radio" name="r">
+            </form>
+        </div>
+        <div class="image">
+            <div class="powered">
+                <div class="byGoogle">
+                    Powered By Google
+                </div>
+            </div>
+            <div class="logo">
+                <img class="imgLogo" src="./assets//images/google.jpg">
+            </div>
+            <div class="bottom">
+                <div class="bottomText">
+                    <span class="quotes">
+                        <i class="fas fa-quote-left"></i>
+                    </span>
+                    <span>
+                        <div class="bottomPara">
+                            We are designing for a global user base. [With InVision] we can get feedback not
+                            just from drivers we see in Sam Francisco but from all around the world.
+                        </div>
+                        <br>
+                        <div class="maikeDavidson">MIKE DAVIDSON</div>
+                        <br>
+                        <div>
+                            <span class="bottomDots1"><i class="fas fa-circle"></i></span>
+                            <span class="bottomDots2"><i class="fas fa-circle"></i></span>
+                            <span class="bottomDots2"><i class="fas fa-circle"></i></span>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    const phoneInputField = document.querySelector("#phone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+        utilsScript:
+            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+
+    const info = document.querySelector(".alert-info");
+    const error = document.querySelector(".alert-error");
+    $(".inputSignupDate").on("change", function () {
+        this.setAttribute(
+            "data-date",
+            moment(this.value, "YYYY-MM-DD")
+                .format(this.getAttribute("data-date-format"))
+        )
+    }).trigger("change")
+    function process(event) {
+        event.preventDefault();
+
+        const phoneNumber = phoneInput.getNumber();
+
+        info.style.display = "";
+        info.innerHTML = `Phone number in E.164 format: <strong>${phoneNumber}</strong>`;
+    }
+</script>
+
+</html>
