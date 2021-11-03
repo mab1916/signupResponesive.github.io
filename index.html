@@ -8,6 +8,7 @@
     <title>SignUP</title>
     <link rel="stylesheet" href="./ResponesiveSignupCSS.css">
     <link rel="stylesheet" href="./fontawesome-free-5.15.4-web/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
 </head>
 
@@ -21,11 +22,13 @@
                         <div class="num1">01</div>
                         <div>Personal Details</div>
                     </div>
-                    <select name="Language" id="Language" class="language">
-                        <option value="0">English</option>
-                        <option value="1">Urdu</option>
-                        <option value="2">Hindi</option>
-                    </select>
+                    <label class="wrap">
+                        <select name="Language" id="Language" class="language">
+                            <option value="0">English</option>
+                            <option value="1">Urdu</option>
+                            <option value="2">Hindi</option>
+                        </select>
+                    </label>
                 </div>
                 <h1>Get started absolutely free</h1>
                 <p style="color: gray;">Free forever, No created card needed.</p>
@@ -52,18 +55,14 @@
                 </div>
                 <br>
                 <div class="input-field">
-                    <input id="date" type="date" data-date-format="DD MMMM YYYY" class="inputSignupDate" value="2021-01-01"
-                    required>
+                    <input id="date" type="date" data-date-format="DD MMMM YYYY" class="inputSignupDate"
+                        value="2021-01-01" required>
                     <label class="labelForDate" for="date">Date</label>
                 </div>
                 <br>
-                <div>
-                    <label class="checkBox">
-                        <input type="checkbox" style="margin-right: 7px;">
-                        <span class="checkBoxText">
-                            By Clicking have you confirm that you agree with our terms & conditions.
-                        </span>
-                    </label>
+                <div class="checkBoxText">
+                    <input type="checkbox" style="margin-right: 7px;">
+                    By Clicking have you confirm that you agree with our terms & conditions.
                 </div>
                 <br><br>
                 <div class="input-Btns">
@@ -81,11 +80,11 @@
         <!-- Middle -->
         <div class="middle">
             <form class="middleFlex">
-                <input class="" type="radio" name="r" checked>
+                <input type="radio" checked>
                 <div class="middleLine"></div>
-                <input class="" type="radio" name="r">
+                <input class="middleRadio" type="radio" checked>
                 <div class="middleLine"></div>
-                <input class="" type="radio" name="r">
+                <input class="middleRadio" type="radio" checked>
             </form>
         </div>
         <!-- Images -->
