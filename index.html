@@ -12,13 +12,13 @@
 </head>
 
 <body>
+    <!-- Form -->
     <div class="form">
         <div class="signUpForm">
             <form class="form1">
                 <div class="formTop">
                     <div class="personalDetails">
-                        <div class="num1">01
-                        </div>
+                        <div class="num1">01</div>
                         <div>Personal Details</div>
                     </div>
                     <select name="Language" id="Language" class="language">
@@ -32,48 +32,63 @@
                 <br><br>
                 <div class="input-field">
                     <input type="text" id="name" class="inputSignup" required />
-                    <label for="name">Full Name *</label>
+                    <label class="labelFor" for="name">Full Name</label>
                 </div>
                 <br>
                 <div class="input-field">
                     <input type="email" id="email" class="inputSignup" required />
-                    <label for="email">Email Address *</label>
+                    <label class="labelFor" for="email">Email Address</label>
                 </div>
                 <br>
                 <div class="input-field">
                     <input type="password" id="password" class="inputSignup" required />
-                    <label for="password">Password *</label>
+                    <label class="labelFor" for="password">Password</label>
                 </div>
                 <br>
                 <div class="input-field">
                     <div class="alert alert-info" style="display: none;"></div>
                     <input id="phone" type="tel" name="phone" class="inputSignupTel" required>
+                    <label class="labelForTel" for="phone">Phone</label>
                 </div>
                 <br>
                 <div class="input-field">
-                    <input type="date" data-date-format="DD MMMM YYYY" class="inputSignupDate" value="2021-01-01"
-                        required>
+                    <input id="date" type="date" data-date-format="DD MMMM YYYY" class="inputSignupDate" value="2021-01-01"
+                    required>
+                    <label class="labelForDate" for="date">Date</label>
                 </div>
                 <br>
-                <div class="input-field">
-                    <input type="checkbox">
-                    <span style="font-size: 15px; margin-left: 10px;">By Clicking have you confirm that you agree with our terms & conditions</span>
+                <div>
+                    <label class="checkBox">
+                        <input type="checkbox" style="margin-right: 7px;">
+                        <span class="checkBoxText">
+                            By Clicking have you confirm that you agree with our terms & conditions.
+                        </span>
+                    </label>
                 </div>
-                <div class="input-field">
+                <br><br>
+                <div class="input-Btns">
                     <input type="submit" class="submitBtn" value="CREATE MY ACCOUNT">
-                    <span>or</span>
-                    <img class="glogo" src="./assets/images/googleLogo.png">
-                    <img class="flogo" src="./assets/images/Facebook-logo.png">
+                    <span style="font-size: 25px;">or</span>
+                    <span>
+                        <img class="linkLogo" src="./assets/images/g.jpg">
+                        <img class="linkLogo" src="./assets/images/fb.jpg">
+                    </span>
                 </div>
+                <br><br><br>
+                <div class="bottomLogin">LOGIN</div>
             </form>
         </div>
+        <!-- Middle -->
         <div class="middle">
-            <form>
-                <input class="middleRadio1" type="radio" name="r" checked><br><br>
-                <input class="middleRadio2" type="radio" name="r"><br><br>
-                <input class="middleRadio3" type="radio" name="r">
+            <form class="middleFlex">
+                <input class="" type="radio" name="r" checked>
+                <div class="middleLine"></div>
+                <input class="" type="radio" name="r">
+                <div class="middleLine"></div>
+                <input class="" type="radio" name="r">
             </form>
         </div>
+        <!-- Images -->
         <div class="image">
             <div class="powered">
                 <div class="byGoogle">

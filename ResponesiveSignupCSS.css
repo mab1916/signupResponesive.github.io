@@ -22,7 +22,6 @@
     flex-direction: column;
     width: 65%;
     height: 90%;
-    /* background-color: purple; */
 }
 .formTop {
     display: flex;
@@ -52,7 +51,7 @@
   position: relative;
   line-height: 60px;
 }
-label {
+.labelFor {
     position: absolute;
     top: 0;
     left: 20px;
@@ -86,13 +85,20 @@ label {
     color: rgb(183, 183, 223);
 }
 .inputSignupTel {
-    width: 100%;
+    width: 438px;
     font-size: 20px;
     padding: 20px 0px;
     border: 0 solid #d3d3d3;
     border-radius: 5px;
     box-shadow: none;
     color: #111;
+}
+.labelForTel {
+    position: absolute;
+    font-size: 12px;
+    top: -20px;
+    left: 5px;
+    color: rgb(183, 183, 223);
 }
 .inputSignupDate {
     width: 100%;
@@ -116,22 +122,51 @@ label {
     color: black;
     opacity: 1;
 }
+.labelForDate {
+    position: absolute;
+    font-size: 12px;
+    top: -20px;
+    left: 5px;
+    color: rgb(183, 183, 223);
+}
+.input-Btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .submitBtn {
-    background-color: blue;
-    width: 200px;
+    background-color: #9898d9;
+    border: 1px solid #9898d9;
+    width: 250px;
     height: 50px;
     color: white;
     border-radius: 50px;
+    cursor: pointer;
 }
-.glogo {
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
+.submitBtn:hover {
+    background-color: rgb(91, 91, 212);
+    border: rgb(91, 91, 212);
 }
-.flogo {
-    width: 100px;
-    height: 100px;
+.linkLogo {
+    width: 50px;
+    height: 50px;
     border-radius: 50px;
+    box-shadow: 0px 0px 3px 0px;
+    cursor: pointer;
+}
+.linkLogo:hover {
+    box-shadow: 0px 0px 3px 1px;
+    cursor: pointer;
+}
+.bottomLogin {
+    width: 200px;
+    display: flex;
+}
+.bottomLogin::before {
+    content: '';
+    border-top: 1px solid;
+    margin: 8px 5px 0 0;
+    flex: 1;
 }
 /* Middle */
 .middle {
@@ -145,34 +180,16 @@ label {
     justify-content: center;
     align-items: center;
 }
-.middleRadio1 {
-    margin-bottom: 18px;
-}
-.middleRadio2 {
+.middleFlex {
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.middleRadio2::after,
-.middleRadio2::before {
-    content: '';
-    border-left: 1px solid gray;
-    margin: -37px -6px 12px 6px;
-    flex: 1;
-}
-.middleRadio2::after {
-    margin: 0px 0 13px 0;
-}
-.middleRadio3 {
-    display: flex;
-}
-.middleRadio3::after,
-.middleRadio3::before {
-    content: '';
-    border-left: 1px solid gray;
-    margin: -37px -6px 12px 6px;
-    flex: 1;
-}
-.middleRadio3::after {
-    margin: 0px 0 13px 0;
+.middleLine {
+    width: 1px;
+    height: 40px;
+    margin-top: -1px;
+    background-color: black;
 }
 /* Images */
 .image {
@@ -246,74 +263,127 @@ label {
 .bottomDots2 {
     color: gray;
 }
-@media screen and (min-width: 2001px) and (max-width: 3000px) {
-    /* middle */
-    .middleRadio1 {
-        margin-bottom: 18px;
+@media screen and (min-width: 2701px) and (max-width: 4000px) {
+    /* Form */
+    .inputSignupTel {
+        width: 887px;
     }
-    .middleRadio2::after,
-    .middleRadio2::before {
-        margin: -36px -6px 12px 5.5px;
+    .checkBoxText {
+        font-size: 20px;
     }
-    .middleRadio2::after {
-        margin: 0px 0 13px 0;
+    .submitBtn {
+        width: 400px;
+        height: 80px;
+        font-size: 24px;
     }
-    .middleRadio3::after,
-    .middleRadio3::before {
-        margin: -33px -6px 12px 5.5px;
+    .linkLogo {
+        width: 80px;
+        height: 80px;
     }
-    .middleRadio3::after {
-        margin: 0px 0 13px 0;
-    }
+    /* Image */
     .imgLogo {
-        width: 200px;
-        height: 200px;
+        width: 270px;
+        height: 270px;
         border-radius: 20px;
+    }
+    .bottomText {
+        width: 460px;
+    }
+    .quotes {
+        font-size: 65px;
+        margin: 0 15px;
+    }
+    .bottomPara {
+        line-height: 40px;
+        font-size: 28px;
+    }
+}
+@media screen and (min-width: 2001px) and (max-width: 2700px) {
+    /* Form */
+    .inputSignupTel {
+        width: 657px;
+    }
+    .checkBoxText {
+        font-size: 18px;
+    }
+    .submitBtn {
+        width: 340px;
+        height: 75px;
+        font-size: 22px;
+    }
+    .linkLogo {
+        width: 75px;
+        height: 75px;
+    }
+    /* Image */
+    .imgLogo {
+        width: 270px;
+        height: 270px;
+        border-radius: 20px;
+    }
+    .bottomText {
+        width: 460px;
+    }
+    .quotes {
+        font-size: 65px;
+        margin: 0 15px;
+    }
+    .bottomPara {
+        line-height: 40px;
+        font-size: 28px;
     }
 }
 @media screen and (min-width: 1801px) and (max-width: 2000px) {
-    /* middle */
-    .middleRadio1 {
-        margin-bottom: 20px;
+    /* Form */
+    .inputSignupTel {
+        width: 584px;
     }
-    .middleRadio2::after,
-    .middleRadio2::before {
-        margin: -40px -6px 12px 5px;
+    .checkBoxText {
+        font-size: 18px;
     }
-    .middleRadio2::after {
-        margin: 0px 0 13px 0;
+    .submitBtn {
+        width: 290px;
+        height: 70px;
+        font-size: 20px;
     }
-    .middleRadio3::after,
-    .middleRadio3::before {
-        margin: -41px -6px 12px 5px;
+    .linkLogo {
+        width: 70px;
+        height: 70px;
     }
-    .middleRadio3::after {
-        margin: 0px 0 13px 0;
-    }
+    /* Image */
     .imgLogo {
-        width: 200px;
-        height: 200px;
+        width: 270px;
+        height: 270px;
         border-radius: 20px;
+    }
+    .bottomText {
+        width: 460px;
+    }
+    .quotes {
+        font-size: 65px;
+        margin: 0 15px;
+    }
+    .bottomPara {
+        line-height: 40px;
+        font-size: 28px;
     }
 }
 @media screen and (min-width: 1601px) and (max-width: 1800px) {
-    /* middle */
-    .middleRadio1 {
-        margin-bottom: 20px;
+    /* Form */
+    .inputSignupTel {
+        width: 548px;
     }
-    .middleRadio2::after,
-    .middleRadio2::before {
-        margin: -40px -6px 12px 5px;
+    .checkBoxText {
+        font-size: 17px;
     }
-    .middleRadio2::after {
-        margin: 0px 0 13px 0;
+    .submitBtn {
+        width: 270px;
+        height: 60px;
+        font-size: 18px;
     }
-    .middleRadio3::after,
-    .middleRadio3::before {
-        margin: -39px -6px 12px 5px;
-    }
-    .middleRadio3::after {
-        margin: 0px 0 13px 0;
+    .linkLogo {
+        width: 60px;
+        height: 60px;
     }
     /* Image */
     .imgLogo {
@@ -321,25 +391,34 @@ label {
         height: 240px;
         border-radius: 20px;
     }
+    .bottomText {
+        width: 410px;
+    }
+    .quotes {
+        font-size: 65px;
+        margin: 10px;
+    }
+    .bottomPara {
+        line-height: 43px;
+        font-size: 23px;
+    }
 }
-@media screen and (min-width: 1401px) and (max-width: 1800px) {
-    /* middle */
-    .middleRadio1 {
-        margin-bottom: 20px;
+@media screen and (min-width: 1401px) and (max-width: 1600px) {
+    /* Form */
+    .inputSignupTel {
+        width: 487px;
     }
-    .middleRadio2::after,
-    .middleRadio2::before {
-        margin: -39px -6px 12px 5px;
+    .checkBoxText {
+        font-size: 16px;
     }
-    .middleRadio2::after {
-        margin: 0px 0 13px 0;
+    .submitBtn {
+        width: 270px;
+        height: 60px;
+        font-size: 18px;
     }
-    .middleRadio3::after,
-    .middleRadio3::before {
-        margin: -38px -6px 12px 5px;
-    }
-    .middleRadio3::after {
-        margin: 0px 0 13px 0;
+    .linkLogo {
+        width: 60px;
+        height: 60px;
     }
     /* Image */
     .imgLogo {
@@ -355,28 +434,17 @@ label {
         margin: 10px;
     }
     .bottomPara {
-        line-height: 45px;
-        font-size: 25px;
+        line-height: 43px;
+        font-size: 23px;
     }
 }
 @media screen and (min-width: 1301px) and (max-width: 1400px) {
-    /* middle */
-    .middleRadio1 {
-        margin-bottom: 20px;
+    /* Form */
+    .inputSignupTel {
+        width: 438px;
     }
-    .middleRadio2::after,
-    .middleRadio2::before {
-        margin: -38px -6px 12px 6px;
-    }
-    .middleRadio2::after {
-        margin: 0px 0 13px 0;
-    }
-    .middleRadio3::after,
-    .middleRadio3::before {
-        margin: -37px -6px 12px 6px;
-    }
-    .middleRadio3::after {
-        margin: 0px 0 13px 0;
+    .checkBoxText {
+        font-size: 13px;
     }
     /* Image */
     .imgLogo {
@@ -386,24 +454,14 @@ label {
     }
 }
 @media screen and (min-width: 1201px) and (max-width: 1300px) {
-    /* middle */
-    .middleRadio1 {
-        margin-bottom: 20px;
+    /* Form */
+    .inputSignupTel {
+        width: 400px;
     }
-    .middleRadio2::after,
-    .middleRadio2::before {
-        margin: -40px -6px 12px 6px;
+    .submitBtn {
+        width: 210px;
     }
-    .middleRadio2::after {
-        margin: 0px 0 13px 0;
-    }
-    .middleRadio3::after,
-    .middleRadio3::before {
-        margin: -39px -6px 12px 6px;
-    }
-    .middleRadio3::after {
-        margin: 0px 0 13px 0;
-    }
+    /* Image */
     .imgLogo {
         width: 200px;
         height: 200px;
@@ -411,24 +469,14 @@ label {
     }
 }
 @media screen and (min-width: 1001px) and (max-width: 1200px) {
-    /* middle */
-    .middleRadio1 {
-        margin-bottom: 20px;
+    /* Form */
+    .inputSignupTel {
+        width: 350px;
     }
-    .middleRadio2::after,
-    .middleRadio2::before {
-        margin: -40px -6px 12px 6px;
+    .submitBtn {
+        width: 190px;
     }
-    .middleRadio2::after {
-        margin: 0px 0 13px 0;
-    }
-    .middleRadio3::after,
-    .middleRadio3::before {
-        margin: -38px -6px 12px 6px;
-    }
-    .middleRadio3::after {
-        margin: 0px 0 13px 0;
-    }
+    /* Image */
     .imgLogo {
         width: 200px;
         height: 200px;
@@ -436,24 +484,20 @@ label {
     }
 }
 @media screen and (min-width: 801px) and (max-width: 1000px) {
-    /* middle */
-    .middleRadio1 {
-        margin-bottom: 20px;
+    /* Form */
+    .inputSignupTel {
+        width: 300px;
     }
-    .middleRadio2::after,
-    .middleRadio2::before {
-        margin: -39px -6px 12px 6px;
+    .submitBtn {
+        width: 140px;
+        height: 40px;
+        font-size: 9px;
     }
-    .middleRadio2::after {
-        margin: 0px 0 13px 0;
+    .linkLogo {
+        width: 40px;
+        height: 40px;
     }
-    .middleRadio3::after,
-    .middleRadio3::before {
-        margin: -38px -6px 12px 6px;
-    }
-    .middleRadio3::after {
-        margin: 0px 0 13px 0;
-    }
+    /* Image */
     .imgLogo {
         width: 200px;
         height: 200px;
@@ -461,24 +505,20 @@ label {
     }
 }
 @media screen and (max-width: 800px) {
-    /* middle */
-    .middleRadio1 {
-        margin-bottom: 20px;
+    /* Form */
+    .inputSignupTel {
+        width: 200px;
     }
-    .middleRadio2::after,
-    .middleRadio2::before {
-        margin: -39px -6px 12px 6px;
+    .submitBtn {
+        width: 130px;
+        height: 30px;
+        font-size: 8px;
     }
-    .middleRadio2::after {
-        margin: 0px 0 13px 0;
+    .linkLogo {
+        width: 30px;
+        height: 30px;
     }
-    .middleRadio3::after,
-    .middleRadio3::before {
-        margin: -38px -6px 12px 6px;
-    }
-    .middleRadio3::after {
-        margin: 0px 0 13px 0;
-    }
+    /* Image */
     .imgLogo {
         width: 180px;
         height: 180px;
