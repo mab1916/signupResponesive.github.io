@@ -7,9 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SignUP</title>
     <link rel="stylesheet" href="./ResponesiveSignupCSS.css">
-    <link rel="stylesheet" href="./fontawesome-free-5.15.4-web/css/all.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"
+        integrity="sha512-DNeDhsl+FWnx5B1EQzsayHMyP6Xl/Mg+vcnFPXGNjUZrW28hQaa1+A4qL9M+AiOMmkAhKAWYHh1a+t6qxthzUw=="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css"
+        integrity="sha512-yye/u0ehQsrVrfSd6biT17t39Rg9kNc+vENcCXZuMz2a+LWFGvXUnYuWUW6pbfYj1jcBb/C39UZw2ciQvwDDvg=="
+        crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+        integrity="sha512-BNZ1x39RMH+UYylOW419beaGO0wqdSkO7pi1rYDYco9OL3uvXaC/GTqA5O4CVK2j4K9ZkoDNSSHVkEQKkgwdiw=="
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -49,9 +55,15 @@
                 </div>
                 <br>
                 <div class="input-field">
-                    <div class="alert alert-info" style="display: none;"></div>
-                    <input id="phone" type="tel" name="phone" class="inputSignupTel" required>
+                    <!-- <div class="alert alert-info" style="display: none;"></div> -->
+                    <input id="phone" type="tel" name="phone" class="inputSignupTel form-control mb-2 inptFielsd" required>
                     <label class="labelForTel" for="phone">Phone</label>
+                    <!-- <select id="select">
+                        <option value="US">US</option>
+                        <option value="GB">GB</option>
+                        <option value="SG">SG</option>
+                        <option value="TH">TH</option>
+                    </select> -->
                 </div>
                 <br>
                 <div class="input-field">
@@ -82,9 +94,9 @@
             <form class="middleFlex">
                 <input type="radio" checked>
                 <div class="middleLine"></div>
-                <input class="middleRadio" type="radio" checked>
+                <input class="middleRadio" type="radio">
                 <div class="middleLine"></div>
-                <input class="middleRadio" type="radio" checked>
+                <input class="middleRadio" type="radio">
             </form>
         </div>
         <!-- Images -->
@@ -100,7 +112,12 @@
             <div class="bottom">
                 <div class="bottomText">
                     <span class="quotes">
-                        <i class="fas fa-quote-left"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                            <g fill="currentColor">
+                                <path
+                                    d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054c.062-.372.166-.703.31-.992c.145-.29.331-.517.559-.683c.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992a4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054c.062-.372.166-.703.31-.992c.145-.29.331-.517.559-.683c.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992a4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2z" />
+                            </g>
+                        </svg>
                     </span>
                     <span>
                         <div class="bottomPara">
@@ -110,10 +127,10 @@
                         <br>
                         <div class="maikeDavidson">MIKE DAVIDSON</div>
                         <br>
-                        <div>
-                            <span class="bottomDots1"><i class="fas fa-circle"></i></span>
-                            <span class="bottomDots2"><i class="fas fa-circle"></i></span>
-                            <span class="bottomDots2"><i class="fas fa-circle"></i></span>
+                        <div style="display: flex;">
+                            <div class="bottomDots1"></div>
+                            <div class="bottomDots2"></div>
+                            <div class="bottomDots2"></div>
                         </div>
                     </span>
                 </div>
@@ -121,18 +138,72 @@
         </div>
     </div>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="./cleave.js"></script>
+<script src="./cleave-phone.i18n.js"></script>
+<script>
+    var cleave = new Cleave('#phone', {
+        phone: true,
+        phoneRegionCode: 'PK',
+    })
+    console.log(cleave);
+    // $('#select').change(function() {
+    //     cleave.setPhoneRegionCode(this.value);
+    //     cleave.setRawValue('');
+    // })
+    var input = document.querySelector("#phone");
+    window.intlTelInput(input, {
+        separateDialCode: true,
+        customPlaceholder: function (
+            selectedCountryPlaceholder,
+            selectedCountryData
+        ) {
+            return "e.g. " + selectedCountryPlaceholder;
+        },
+    });
+</script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
-    const phoneInputField = document.querySelector("#phone");
-    const phoneInput = window.intlTelInput(phoneInputField, {
-        utilsScript:
-            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-    });
+    // const phoneInputField = document.querySelector("#phone");
+    // const phoneInput = window.intlTelInput(phoneInputField, {
+    //     utilsScript:
+    //         "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    // });
 
-    const info = document.querySelector(".alert-info");
-    const error = document.querySelector(".alert-error");
+    // const info = document.querySelector(".alert-info");
+    // const error = document.querySelector(".alert-error");
+    // function process(event) {
+    //     event.preventDefault();
+
+    //     const phoneNumber = phoneInput.getNumber();
+
+    //     info.style.display = "";
+    //     info.innerHTML = `Phone number in E.164 format: <strong>${phoneNumber}</strong>`;
+    // }
+    // function getIp(callback) {
+    //     fetch('https://ipinfo.io/json?token=<your token>', { headers: { 'Accept': 'application/json' } })
+    //         .then((resp) => resp.json())
+    //         .catch(() => {
+    //             return {
+    //                 country: 'us',
+    //             };
+    //         })
+    //         .then((resp) => callback(resp.country));
+    // }
+    // // const phoneInput = window.intlTelInput(phoneInputField, {
+    // //     initialCountry: "auto",
+    // //     geoIpLookup: getIp,
+    // //     utilsScript:
+    // //         "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    // // });
+    // const phoneInput = window.intlTelInput(phoneInputField, {
+    //     preferredCountries: ["us", "co", "in", "de"],
+    //     utilsScript:
+    //         "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    // });
+
+    // For Calander
     $(".inputSignupDate").on("change", function () {
         this.setAttribute(
             "data-date",
@@ -140,14 +211,6 @@
                 .format(this.getAttribute("data-date-format"))
         )
     }).trigger("change")
-    function process(event) {
-        event.preventDefault();
-
-        const phoneNumber = phoneInput.getNumber();
-
-        info.style.display = "";
-        info.innerHTML = `Phone number in E.164 format: <strong>${phoneNumber}</strong>`;
-    }
 </script>
 
 </html>
